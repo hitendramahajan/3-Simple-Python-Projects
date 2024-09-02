@@ -1,8 +1,8 @@
 from PIL import Image, ImageEnhance, ImageFilter
 import os
 
-path = "./imgs" # folder for unedited images
-pathOut = "./editedImgs" # folder for edited images
+path = "C:/IDE/3-Simple-Python-Projects/imageProcessor/imgs" # folder for unedited images
+pathOut = "C:/IDE/3-Simple-Python-Projects/imageProcessor/editedImgs" # folder for edited images
 
 for filename in os.listdir(path):
     img = Image.open(f"{path}/{filename}")
