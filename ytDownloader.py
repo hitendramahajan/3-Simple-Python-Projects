@@ -1,9 +1,25 @@
 from pytube import YouTube
+import argparse
+
+parser = argparse.ArgumentParser(
+    description='A sample Argument Parser.'
+)
+parser.add_argument('-u',
+                    '--url',
+                    nargs='?',
+                    # const='https://www.youtube.com/watch?v=Wnr8LRO7CiA',
+                    default='https://www.youtube.com/watch?v=Wnr8LRO7CiA',
+                    type=str
+                    )
+
+args = parser.parse_args()
+
+print(args.url)
 
 try:
     # Ask the user to input the YouTube URL
-    url = input("Enter the YouTube URL: ")
-    
+    # url = input("Enter the YouTube URL: ")
+    url = args.url
     yt = YouTube(url)
     
     print("Title:", yt.title)
